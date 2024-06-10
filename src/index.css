@@ -1,13 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.red {
+  background-color: #c20c0c;
+}
+.purple {
+  background-color: #905cf1;
+}
+.green {
+  background-color: #61c065;
+}
+.medium-gray {
+  background-color: #e5e5e5;
+}
+
+.dashboard {
+  display: flex;
+  height: calc(100vh - 120px);
+}
+
+.section {
+  margin-bottom: 2rem;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  border: 1px solid #e5e5e5;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-radius: 15px;
+}
+
+.timeline {
+  --background: #0a0f2b;
+  --accent: #0a0f2b;
+  --text: #0a0f2b;
+  --line: #0a0f2b;
+  background: var(--background);
+  color: var(--text);
+  height: 3px;
+  position: relative;
+  align-items: center;
+  justify-items: center;
+  width: 90%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.line {
+  position: absolute;
+  border-left: 2px solid #0a0f2b;
+  height: 14px;
+  transform: translateY(-50%);
+}
+.middle-line {
+  position: absolute;
+  border-right: 2px solid #0a0f2b;
+  height: 14px;
+  transform: translateY(-50%);
+}
+.last-line {
+  position: absolute;
+  border-right: 2px solid #0a0f2b;
+  height: 14px;
+  transform: translateY(-50%);
+}
+
+.line .time {
+  position: relative;
+  top: -15px;
+  color: rgb(0, 0, 0);
+  left: -50%;
+  font-size: 12px;
+}
+
+.last-line .time {
+  position: relative;
+  top: -15px;
+  color: rgb(0, 0, 0);
+  left: 50%;
+  font-size: 12px;
+}
+.middle-line .time {
+  position: relative;
+  top: -15px;
+  color: rgb(0, 0, 0);
+  left: 50%;
+  font-size: 12px;
+}
+
+.time-block {
+  height: 50px;
+  margin-top: 2px;
+  display: flex;
+}
+
+.popup {
+  position: relative;
+  background-color: white;
+  border-radius: 10px;
+  width: 500px;
+}
+
+.section-header {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #0a0f2b;
+}
+
+.aircraft-id {
+  font-size: 20px;
+  font-weight: 600;
+  align-items: center;
+  color: #1976d2;
+}
+
+.flight-id {
+  font-size: 20px;
+  font-weight: 600;
+  align-items: center;
+  color: #d24d19;
+}
+
+.aircraft-desc {
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.aircraft-desc .header {
+  font-size: 16px;
+  font-weight: 450;
+  align-items: center;
+  text-align: center;
+}
+
+.aircraft-desc .footer {
+  font-size: 10px;
+  line-height: 0.7;
+  text-align: center;
+  display: block;
+  text-transform: uppercase;
+}
+
+.rotation-card-container {
+  position: relative;
+  margin: 8px;
+  padding: 1rem;
+}
+
+.rotation-card-container .aircraft-id {
+  text-align: center;
+  margin-bottom: 24px;
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.rotation-card-container .flight-id {
+  text-align: center;
+  margin-bottom: 24px;
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.rotation-card-container .detail-container {
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+}
+
+.detail-container .header {
+  font-size: 20px;
+  font-weight: 600;
+  align-items: center;
+  line-height: 0.7;
+  text-align: center;
+}
+
+.detail-container .footer {
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.validation-error {
+  margin-top: 2rem;
+  color: #c20c0c;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.base-flight {
+  font-size: 10px;
+  line-height: 0.7;
+  text-align: center;
+  display: block;
+  text-transform: uppercase;
+}
+
+.value .box {
+  width: 15px;
+  height: 15px;
+  margin: 4px;
+}
+
+.value .key-text {
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.key-container {
+  margin-top: 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  justify-content: space-between;
+  display: flex;
+}
+
+.key-container .value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.date-header {
+  text-transform: uppercase;
+  font-size: 25px;
+  color: #0a0f2b;
 }
